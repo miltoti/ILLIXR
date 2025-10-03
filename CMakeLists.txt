@@ -175,7 +175,6 @@ find_package(SQLite3 REQUIRED)
 find_package(X11 REQUIRED)
 
 pkg_check_modules(gl REQUIRED gl)
-
 find_package(Eigen3 REQUIRED)
 
 #############
@@ -240,7 +239,7 @@ endif()
 
 # give a summary of what will be done
 include(cmake/ConfigurationSummary.cmake)
-
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/plugins)
 # set up to install profile files
 if(ILLIXR_PROFILE_NAMES)
     foreach(GRP IN LISTS ILLIXR_PROFILE_NAMES)
